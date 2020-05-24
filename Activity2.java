@@ -1,4 +1,4 @@
-package com.example.numads20aishwaryamurali;
+package trial.numads2020aishwaryamurali;
 
 import androidx.appcompat.app.AppCompatActivity;
 

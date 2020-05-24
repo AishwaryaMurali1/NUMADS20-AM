@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layout_anchorGravity="center_horizontal|center_vertical"
+    android:layout_gravity="clip_horizontal|center_vertical"
     tools:context=".MainActivity">
 
     <TextView
@@ -45,7 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="227dp"
         android:layout_marginBottom="14dp"
-        android:text="ToggleButton"
+        android:text="@string/togglebutton"
         android:textColor="#009688"
         android:textOff="@string/about"
         android:textOn="@string/aishwarya_murali_murali_ais_husky_neu_edu"
