@@ -32,8 +32,8 @@ public class Activity3 extends AppCompatActivity {
         setContentView(R.layout.activity_3);
 
         final ArrayList<String> list = new ArrayList<>();
-        listView = (ListView)findViewById(R.id.listview);
-        final ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,list);
+        listView = (ListView) findViewById(R.id.listview);
+        final ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, list);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -59,26 +59,21 @@ public class Activity3 extends AppCompatActivity {
                 alert.setPositiveButton("Add Link", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {
                         String myUrl = edittext.getText().toString();
-                        if(myUrl.startsWith("https://www."))
-                        {
+                        if (myUrl.startsWith("https://www.")) {
                             list.add(myUrl);
                             adapter.notifyDataSetChanged();
                             listView.setAdapter(adapter);
                             Snackbar.make(v, "New link successfully added", Snackbar.LENGTH_LONG)
                                     .setAction("Action", null).show();
-                        }
-                        else if(myUrl.startsWith("www."))
-                        {
-                            String s = "https://"+myUrl;
+                        } else if (myUrl.startsWith("www.")) {
+                            String s = "https://" + myUrl;
                             list.add(s);
                             adapter.notifyDataSetChanged();
                             listView.setAdapter(adapter);
                             Snackbar.make(v, "New link successfully added", Snackbar.LENGTH_LONG)
                                     .setAction("Action", null).show();
-                        }
-                       else
-                        {
-                            Toast toast = Toast.makeText(Activity3.this,"Invalid URL. Please add a valid url",Toast.LENGTH_LONG);
+                        } else {
+                            Toast toast = Toast.makeText(Activity3.this, "Invalid URL. Please add a valid url", Toast.LENGTH_LONG);
                             toast.show();
                         }
                         //adapter.clear();
@@ -97,6 +92,5 @@ public class Activity3 extends AppCompatActivity {
                 alert.show();
             }
         });
-
     }
 }
