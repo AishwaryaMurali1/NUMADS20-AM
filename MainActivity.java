@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    private Button button,button8,myLocation;
+    private Button button,button8,myLocation,webService;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,11 +17,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button = findViewById(R.id.button);
         button8 = findViewById(R.id.button8);
         myLocation = findViewById(R.id.myLocation);
+        webService = findViewById(R.id.webService);
 
 
         button.setOnClickListener(this);
         button8.setOnClickListener(this);
         myLocation.setOnClickListener(this);
+        webService.setOnClickListener(this);
 
 
     }
@@ -33,6 +35,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public void openActivity3() {
         Intent intent = new Intent(this, Activity3.class);
+        startActivity(intent);
+    }
+
+    public void openActivity4() {
+        Intent intent = new Intent(this, Activity4.class);
         startActivity(intent);
     }
 
@@ -50,6 +57,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.button : openActivity2();
             break;
             case R.id.button8 : openActivity3();
+            break;
+            case R.id.webService : openActivity4();
             break;
             case R.id.myLocation : openActivity5();
             break;
